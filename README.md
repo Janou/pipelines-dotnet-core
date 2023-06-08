@@ -1,5 +1,3 @@
-(https://github.com/Janou/pipelines-dotnet-core/assets/8237340/ea9dbba5-41cd-4573-95dd-bbb3aa71d9c0)
-
 # Sample ASP.NET Core application for Azure Pipelines docs
 
 For information on how to set up a pipeline for this repository, see [Create your first pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=azure-devops).
