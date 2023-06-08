@@ -7,11 +7,21 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  - task: UseDotNet@2
+    displayName: 'nstall .NET Core SDK'
+    inputs:
+      command: 'restore'
+      feedsToUse: 'select'
+      vstsFeed: 'my-vsts-feed'
+      
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      arguments: '--configuration $(buildConfiguration)'
+    displayName: 'dotnet build $(buildConfiguration)' 
