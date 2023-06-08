@@ -1,4 +1,4 @@
-![image](https://github.com/Janou/pipelines-dotnet-core/assets/8237340/ea9dbba5-41cd-4573-95dd-bbb3aa71d9c0)
+(https://github.com/Janou/pipelines-dotnet-core/assets/8237340/ea9dbba5-41cd-4573-95dd-bbb3aa71d9c0)
 
 # Sample ASP.NET Core application for Azure Pipelines docs
 
