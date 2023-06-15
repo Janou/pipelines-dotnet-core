@@ -10,3 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+- task: PowerShell@2
+  displayName: "UCare CosmosDB NoSQL Seed Data"
+  inputs:
+    filePath: '/powershell-files/actual-files/InsertSeedDataIntoCosmosDBNoSQL.ps1'
