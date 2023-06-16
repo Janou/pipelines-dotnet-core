@@ -7,10 +7,8 @@ resources:
  repositories:
    - repository: azDeployments
      type: git
-     name: AzDeployments/powershell-files
-
-trigger:
-- jm-development
+     name: UCare - Experimental Research for Azure Cosmos DB/AzDeployments
+     ref: jm-development
 
 pool:
   vmImage: 'windows-latest'
