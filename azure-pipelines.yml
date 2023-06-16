@@ -17,4 +17,4 @@ steps:
 - task: PowerShell@2
   displayName: "UCare CosmosDB NoSQL Seed Data Test"
   inputs:
-    filePath: 'actual-scripts/InsertSeedDataIntoCosmosDBNoSQL.ps1'
+    filePath: 'powershell-files/actual-scripts/InsertSeedDataIntoCosmosDBNoSQL.ps1'
