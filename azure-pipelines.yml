@@ -4,17 +4,17 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+- jm-development
 
 pool:
   vmImage: 'windows-latest'
 
 steps:
 - pwsh: |
-    Get-ChildItem / -Recurse
+    Get-ChildItem $(Build.SourcesDirectory) -Recurse
   name: DebugCheckout
   displayName: Debug script checkout
 - task: PowerShell@2
   displayName: "UCare CosmosDB NoSQL Seed Data"
   inputs:
-    filePath: '$(System.DefaultWorkingDirectory)/powershell-files/actual-scripts/InsertSeedDataIntoCosmosDBNoSQL.ps1'
+    filePath: '$(Build.SourcesDirectory)/powershell-files/actual-scripts/InsertSeedDataIntoCosmosDBNoSQL.ps1'
