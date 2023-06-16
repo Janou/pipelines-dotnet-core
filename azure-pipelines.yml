@@ -11,7 +11,7 @@ pool:
 
 steps:
 - pwsh: |
-    Get-ChildItem $(System.DefaultWorkingDirectory) -Recurse
+    Get-ChildItem / -Recurse
   name: DebugCheckout
   displayName: Debug script checkout
 - task: PowerShell@2
