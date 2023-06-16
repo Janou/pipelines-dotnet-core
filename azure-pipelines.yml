@@ -10,11 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- pwsh: |
-    Get-ChildItem $(Build.SourcesDirectory) -Recurse
-  name: DebugCheckout
-  displayName: Debug script checkout
 - task: PowerShell@2
   displayName: "UCare CosmosDB NoSQL Seed Data"
   inputs:
-    filePath: '$(Build.SourcesDirectory)/powershell-files/actual-scripts/InsertSeedDataIntoCosmosDBNoSQL.ps1'
+    filePath: 'C:\agent\_work\1\s\powershell-files\actual-scripts\InsertSeedDataIntoCosmosDBNoSQL.ps1'
