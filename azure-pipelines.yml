@@ -1,7 +1,7 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+variables:
+- group: UCare-DEV-JM
+- name: vmImageName
+  value: $(vmImageName)
 
 resources:
  repositories:
@@ -11,10 +11,14 @@ resources:
      ref: jm-development
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: $(vmImageName)
 
 steps:
-- task: PowerShell@2
+- task: AzurePowerShell@5
   displayName: "UCare CosmosDB NoSQL Seed Data Test"
   inputs:
-    filePath: './powershell-files/RunSeedCosmosDBNoSQL.ps1'
+    azureSubscription: $(AzureSubscription)'
+    ScriptType: 'FilePath'
+    ScriptPath: '$(CosmosPopulateNoSqlScript)'
+    ScriptArguments: -resourceGroupName '$(CosmosResourceGroupName)' -dataInputType '$(DataInputType)' -dummyData '$(NoSQLDummyData)'
+    azurePowerShellVersion: 'LatestVersion'
