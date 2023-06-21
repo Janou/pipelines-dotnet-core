@@ -11,7 +11,7 @@ resources:
      ref: jm-development
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: PowerShell@2
